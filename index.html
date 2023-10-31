@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;500&display=swap" rel="stylesheet">
+    <title>Landing</title>
+</head>
+
+<body>
+    <div class="abc-content">
+        <div class="abc-img">
+            <!-- <img src="./assets/img/imagen_1.jpg" alt=""> -->
+        </div>
+        <div class="abc-info">
+            <div class="abc-title-icon">
+                <img src="./assets/svg/icon_smart.svg" alt="">
+                <div class="abc-title">
+                    <h3> BCF Consulta </h3>
+                    <h3> Médica presencial </h3>
+                </div>
+            </div>
+            <div class="abc-title-dos">
+                <img src="./assets/svg/users-medical-red.svg" alt="">
+                <p>Elige la especialidad médica que quieres asistir</p>
+            </div>
+            <div class="abc-select-service">
+                <select class="abc-select-custom" id="abc-select">
+                    <option value="medicina-general">BCF Consulta Medica General o Familiar</option>
+                    <option value="ginecologia">Consulta Especialista Ginecología y Obstetricia</option>
+                    <option value="oftalmologia">Consulta Médica Especialistas Oftalmología</option>
+                    <option value="pediatria">Consulta Médica Especialistas Pediatría o Medicina General Infantil
+                    </option>
+                    <option value="traumatologia">Consulta Médica Especialistas Traumatología y Ortopedia</option>
+                    <option value="urologia">Consulta Médica Especialistas en Urología</option>
+                </select>
+            </div>
+            <div id="text-especialitie">
+
+            </div>
+
+            <div class="abc-par-select">
+                <div class="abc-par-uno">
+                    <div class="abc-par-uno-title">
+                        <img src="./assets/svg/icon-check-abc.svg" alt="">
+                        <h4>Eventos Disponibles</h4>
+                    </div>
+                    <div class="abc-select-abc" id="abc-select-evento" title="6 Eventos Anuales">
+                        <div class="tooltip-box">
+                            <div class="tooltip-arrow"></div>
+                            6 Eventos como límite único y combinado para el grupo familiar
+                        </div>
+                        <div class="abc-eventos" id="id_eventos">
+                            <h6>6 Eventos Anuales</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="abc-par-uno">
+                    <div class="abc-par-uno-title">
+                        <img src="./assets/svg/icon-user.svg" alt="">
+                        <h4>Selecciona tu previsión</h4>
+                    </div>
+
+                    <div class="abc-select-abc">
+                        <select class="abc-select-prevision-evento" id="abc-select-prevision">
+                            <option value="isapre">ISAPRE</option>
+                            <option value="fonasa">FONASA</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="abc-boton">
+                <button id="abc-boton-agendar-hora">
+                    <h5>AGENDAR HORA</h5>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    const tooltipContainer = document.getElementById('abc-select-evento');
+    const tooltipBox = tooltipContainer.querySelector('.tooltip-box');
+
+    tooltipContainer.addEventListener('mouseover', function () {
+        tooltipBox.style.display = 'block';
+    });
+
+    tooltipContainer.addEventListener('mouseout', function () {
+        tooltipBox.style.display = 'none';
+    });
+
+
+    const especialidades = [
+        {
+            "especialidad-name": "medicina-general",
+            "especialidad-text": `<p>Atención de un profesional de Medicina General o familiar que atiende de manera integral al paciente, respondiendo además temas de interés específico. Derivando a especialista si es necesario. Realiza diagnóstico con apoyo de exámenes médicos complementarios a la atención médica.</p><p><span>Monto máximo evento:</span> 100% cobertura copago Fonasa, Isapres o Prestación.</p>`,
+            "especialidad-img": './assets/img/imagen_1.jpg'
+        },
+        {
+            "especialidad-name": "ginecologia",
+            "especialidad-text": `<p>Atención médica ambulatoria entregada por un profesional <span>Especialista en Ginecología y Obstetricia</span> capacitado para diagnosticar y manejar diferentes patologías propias de la especialidad. Así mismo puede revisar los exámenes que se haya realizado el paciente para complementar diagnóstico clínico.</p><p><span>Monto máximo evento:</span> 100% cobertura copago Fonasa, Isapres o Prestación.</p>`,
+            "especialidad-img": './assets/img/ginecologia.jpg'
+        },
+        {
+            "especialidad-name": "oftalmologia",
+            "especialidad-text": `<p>Atención médica entregada por un <span>Médico Especialista en Oftalmología</span> quien diagnostica y entrega tratamiento a diversas patologías y dolencias o enfermedades de los ojos asociadas a la especialidad, entre ellas: vicios de refracción, estrabismo, lagrimal, párpado, musculatura ocular. Realiza el examen visual y entrega receta de lentes cuando corresponda.</p><p><span>Monto máximo evento:</span> 100% cobertura copago Fonasa, Isapres o Prestación.</p>`,
+            "especialidad-img": './assets/img/oftalmologia.jpg'
+        },
+        {
+            "especialidad-name": "pediatria",
+            "especialidad-text": `<p><span>Atención médica especializada en niños</span>, la entrega un médico con formación en atención pediátrica, capacitado para diagnosticar y manejar diversas patologías asociadas desde el nacimiento del niño hasta aproximadamente los 14 años y adolescencia, propias de su Desarrollo.</p><p><span>Monto máximo evento:</span> 100% cobertura copago Fonasa, Isapres o Prestación.</p>`,
+            "especialidad-img": './assets/img/pediatria.jpg'
+        },
+        {
+            "especialidad-name": "traumatologia",
+            "especialidad-text": `<p>Atención médica entregada por un <span>Médico Especialista en Traumatología</span> dedicado al estudio y tratamiento de lesiones o traumatismos en extremidades o columna y sus consecuencias como lo son: fracturas óseas, luxaciones, esquinces y contusiones.</p><p><span>Monto máximo evento:</span> 100% cobertura copago Fonasa, Isapres o Prestación.</p>`,
+            "especialidad-img": './assets/img/traumatologia.jpg'
+        },
+        {
+            "especialidad-name": "urologia",
+            "especialidad-text": `<p>Atención médica ambulatoria entregada por un profesional <span>Especialista en Urología</span> capacitado para diagnosticar y manejar diferentes patologías de la especialidad. Así mismo puede revisar los exámenes que se haya realizado el paciente para complementar diagnóstico clínico.</p><p><span>Monto máximo evento:</span> 100% cobertura copago Fonasa, Isapres o Prestación.</p>`,
+            "especialidad-img": './assets/img/urologia.jpg'
+        },
+    ];
+
+    const selectEspecialitie = document.getElementById('abc-select');
+
+
+    selectEspecialitie.addEventListener('change', function () {
+        const selectedOption = this.value;
+
+        const especialidadSeleccionada = especialidades.find(especialidad => especialidad["especialidad-name"] === selectedOption);
+
+        if (especialidadSeleccionada) {
+            // Actualizar el contenido del div 'text-especialitie' con el texto correspondiente
+            document.getElementById('text-especialitie').innerHTML = especialidadSeleccionada["especialidad-text"];
+
+            // Obtener el div con la imagen
+            const imagenDiv = document.querySelector('.abc-img');
+            // Cambiar la imagen según la especialidad seleccionada
+            imagenDiv.innerHTML = `<img src="${especialidadSeleccionada["especialidad-img"]}" alt="">`;
+        }
+    });
+
+</script>
+
+</html>

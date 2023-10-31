@@ -1,0 +1,254 @@
+:root {
+    --background-color: #F9F9FC;
+    --primary-color: #ab0640;
+    --title-color: #3E444D;
+    --select-option: #666666;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: flex-start; */
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100vw;
+    font-family: 'Mulish', sans-serif;
+}
+
+.abc-content {
+    display: flex;
+    flex-direction: row;
+    max-width: 1080px;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+}
+
+.abc-img img {
+    width: 520px;
+    margin: auto;
+}
+
+.abc-img {
+    width: 48%;
+    margin: auto;
+    padding: 0.8rem;
+}
+
+.abc-info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 1rem;
+}
+
+.abc-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.abc-title h3 {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(to right, #E0004D, #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: start;
+    font-family: Arial, sans-serif;
+}
+
+.abc-title-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-bottom: 1rem;
+}
+
+.abc-title-icon img {
+    width: 3rem;
+    margin-right: 1rem;
+}
+
+.abc-title-dos img{
+    width: 16px;
+    margin-right: 0.3rem;
+}
+
+.abc-title-dos{
+     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+     margin-bottom: 1rem;
+}
+
+.abc-title-dos p{
+    margin: 0;
+    font-size: 15px;
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+.abc-select-custom{
+    border: 1px solid var( --primary-color);
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 8px;
+    color: var(--select-option);
+}
+
+.abc-select-service{
+    /* margin-top: 0.5rem; */
+}
+
+.abc-select-service option {
+    color: #666666;
+}
+
+.abc-info{
+    color: var(--select-option);
+    width: 100%;
+    margin: 0;
+}
+
+.abc-info span{
+    color: var(--select-option);
+    font-weight: 700;
+}
+
+.abc-par-uno{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.abc-par-select{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.abc-par-uno-title{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.abc-par-uno-title img{
+    margin-right: 0.5rem;
+}
+
+.abc-par-uno-title h4{
+    margin: 0;
+}
+
+.abc-boton{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.abc-select-prevision-evento{
+    border: 1px solid var( --primary-color);
+    width: 260px;
+    padding: 0.5rem;
+    border-radius: 8px;
+    color: var(--select-option);
+}
+
+.abc-boton button{
+    background-color: var(--primary-color);
+    border: none;
+    width: 200px;
+    color: white;
+    padding: 0.8rem 0.1rem 0.8rem 0.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.abc-boton button h5{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Estilo para el contenedor */
+.abc-select-abc {
+    position: relative;
+    display: inline-block;
+  }
+  
+/* Estilo para el contenedor */
+.abc-select-abc {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Estilo para el tooltip */
+  .tooltip-box {
+    display: none;
+    position: absolute;
+    background-color: #373D3F;
+    color: #fff;
+    padding: 10px;
+    padding: 0 1rem 0 1rem;
+    border-radius: 5px;
+    z-index: 1;
+    width: 193px;
+    font-size: 15px;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Estilo para la "colita" del tooltip */
+  .tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #373D3F transparent transparent transparent;
+    top: 100%; /* Posiciona la "colita" debajo del tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Estilo para el select */
+  .abc-select-prevision-evento {
+    /* Agrega estilos según tus necesidades */
+  }
+  
+  /* Mostrar el tooltip al pasar el mouse sobre el contenedor */
+  .abc-select-abc:hover .tooltip-box {
+    display: block;
+  }
+
+  .abc-select-abc h6{
+    margin: 0;
+  }
+
+  .abc-eventos{
+    display: flex;
+    justify-content: center;
+    border: 1px solid grey;
+    padding: 0.6rem;
+    border-radius: 6px;
+    width: 240px;
+  }
+
+  @media only screen and (max-width: 767px) {
+
+    .abc-content {
+        flex-direction: column;
+       
+    }
+
+  }
